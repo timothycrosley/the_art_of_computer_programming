@@ -75,3 +75,16 @@ def euclid_calls(first, second, calls=1):
 
 
 assert sum([euclid_calls(value, 5) for value in range(1, 6)]) / 5 == 2.6
+
+
+def euclid_subtraction(first, second):
+    """Returns the greatest common denominator of two numbers without variable, 1_9 answer"""
+    remainder = second - first
+    second = min(first, second)
+    if remainder == 0:
+        return second
+
+    first, second = second, remainder
+    return euclid(first, second)
+
+assert euclid_subtraction(119, 544) == 17
